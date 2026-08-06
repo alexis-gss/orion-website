@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Orion neutrals */
+  --color-ink: #1a1a17;
+  --color-paper: #f2f0e9;
+  --color-surface: #fff;
+  --color-surface-high: #fff;
+  --color-border: #00000014;
+  --color-good: #2fb46a;
+  --color-average: #ffc93c;
+  --color-low: #ff6b5e;
+
+  /* Default brand accent (Cinema domain's gold, the app's original identity),
+     used for generic chrome shared across all domains: header, footer, download CTA. */
+  --color-accent: #ffc93c;
+  --color-accent-soft: #ffdb74;
+  --color-accent-ink: #241a00;
+
+  /* Per-domain brand colors, matching the exact gradients used in the app itself
+     (see HomeScreen.kt: CinemaGradient / GamesGradient / BooksGradient). Each domain
+     also gets an "ink" color for text/icons placed directly on its accent. */
+  --color-cinema: #ffc93c;
+  --color-cinema-soft: #ffdb74;
+  --color-cinema-ink: #241a00;
+  --color-games: #9147ff;
+  --color-games-soft: #b58cff;
+  --color-games-ink: #fff;
+  --color-books: #2258d3;
+  --color-books-soft: #5b8dff;
+  --color-books-ink: #fff;
+}
+
+html {
+  color-scheme: light;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

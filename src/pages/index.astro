@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.tsx";
+import Hero from "@/components/Hero.tsx";
+---
+
+<Layout>
+  <Header client:load />
+  <main class="flex flex-1 flex-col">
+    <Hero client:load />
+  </main>
+</Layout>
